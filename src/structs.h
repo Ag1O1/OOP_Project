@@ -7,7 +7,6 @@ struct UserLogin {
   std::string username;
   std::string password;
   std::string userType;
-  std::vector<Product> cart;
 };
 
 struct NewProductDetails {

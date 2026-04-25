@@ -1,4 +1,5 @@
 #include "UI.h"
+#include "addToCart.h"
 #include "searchProduct.h"
 #include "structs.h"
 #include <vector>
@@ -8,43 +9,100 @@ int main() {
   UI ui;
   Inventory inventory;
   bool running = true;
-  ui.LoginMenu();
+  bool logged_in = false;
 
   while (running) {
-    vector<Product> cart = user.cart;
-    int choice = ui.MainMenu();
+    UserLogin user = ui.LoginMenu();
+    logged_in = true;
+    vector<Product> cart;
 
-    switch (choice) {
-    case 1:
-      // Display inventory using the Inventory class
-      ui.DisplayInventory(inventory.getAllStock());
-      break;
+    while (logged_in) {
+      if (user.userType == "customer") {
+        int choice = ui.MainMenu();
 
-    case 2:
-      ui.DisplayCart(cart);
-      break;
+        switch (choice) {
+          // Display inventory
+        case 1:
+          ui.DisplayInventory(inventory);
+          break;
 
-    case 3: {
-      // Add new product
-      NewProductDetails details = ui.GetProductInput();
-      // Need to generate ID automatically
-      int newId = inventory.getAllStock().size() + 1;
-      inventory.addProduct(
-          Product(newId, details.name, details.price, details.quantity));
-      ui.PrintMessage("Product added successfully!");
-      break;
+        case 2:
+          // Display cart
+          ui.DisplayCart(cart);
+          break;
+
+        case 3: {
+          int id, amount;
+          cout << "Enter id and amount: ";
+          cin >> id >> amount;
+          AddToCart::execute(id, amount, inventory, cart);
+          cout << "Added to cart";
+          break;
+        }
+
+        case 4:
+          // Print receipt
+          ui.PrintReceipt(cart);
+          cart.clear();
+          break;
+
+        case 5:
+          // Exit
+          running = false;
+          logged_in = false;
+          ui.PrintMessage("Goodbye!");
+          break;
+        }
+      } else if (user.userType == "admin") {
+        int res;
+        cout << "1. DisplayInventory 2. Add product 3. Remove product 4. "
+                "logout 5. exit \n";
+        cin >> res;
+
+        switch (res) {
+        case 1:
+          ui.DisplayInventory(inventory);
+          break;
+
+        case 2: {
+          NewProductDetails details = ui.GetProductInput();
+          int newId = inventory.getAllStock().size() + 1;
+          inventory.addProduct(
+              Product(newId, details.name, details.price, details.quantity));
+          ui.PrintMessage("Product added successfully!");
+          break;
+        }
+        case 3: {
+          unsigned removeId;
+          ui.DisplayInventory(inventory);
+          cout << "Enter product ID to remove: ";
+          cin >> removeId;
+
+          Product *product = inventory.getProduct(removeId);
+          if (product != nullptr) {
+            cout << "Removing: " << product->getName() << endl;
+            inventory.removeProduct(removeId);
+            ui.PrintMessage("Product removed successfully!");
+          } else {
+            ui.PrintMessage("Error: Product ID not found!");
+          }
+          break;
+        }
+        case 4:
+          logged_in = false;
+          break;
+        case 5:
+          running = false;
+          logged_in = false;
+          ui.PrintMessage("Goodbye!");
+          break;
+        }
+      }
     }
-
-    case 4:
-      ui.PrintReceipt(cart);
-      cart.clear();
-      break;
-
-    case 5:
-      running = false;
-      ui.PrintMessage("Goodbye!");
-      break;
+    /*
+    if (user.userType == "cashier") {
     }
+    */
   }
 
   return 0;
