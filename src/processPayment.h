@@ -1,3 +1,4 @@
+#pragma once
 #include "inventory.h"
 #include <iostream>
 #include <vector>

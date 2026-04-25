@@ -1,3 +1,4 @@
+#pragma once
 #include "Product.h"
 #include <vector>
 
@@ -6,10 +7,6 @@ private:
   std::vector<Product> inventory;
 
 public:
-  void loadFromFile();
-
-  void saveToFile();
-
   void addProduct();
 
   void deleteProduct();

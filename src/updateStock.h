@@ -1,3 +1,4 @@
+#pragma once
 #include "Product.h"
 #include <iostream>
 #include <vector>
