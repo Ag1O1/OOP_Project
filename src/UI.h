@@ -1,5 +1,6 @@
 #pragma once
 #include "Product.h"
+#include "inventory.h"
 #include "structs.h"
 #include <string>
 #include <vector>
@@ -12,7 +13,7 @@ public:
 
   void PrintMessage(const std::string &msg);
 
-  void DisplayInventory(const std::vector<Product> &inventory);
+  void DisplayInventory(const Inventory &inventory);
 
   void DisplayCart(const std::vector<Product> &cart);
 

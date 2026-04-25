@@ -35,7 +35,7 @@ void UI::PrintMessage(const string &msg) {
   cout << "\n[System]: " << msg << endl;
 }
 
-void UI::DisplayInventory(const vector<Product> &inventory) {
+void UI::DisplayInventory(const Inventory &inventory) {
   cout << "\n--- Current Inventory ---" << endl;
   // Using iomanip to make neat columns
   cout << left << setw(5) << "ID" << setw(20) << "Name" << setw(10) << "Price"
