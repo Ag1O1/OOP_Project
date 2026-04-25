@@ -1,17 +1,17 @@
 #include "UI.h"
-#include "inventory.h" // Include this instead of Product.h directly
+#include "searchProduct.h"
 #include "structs.h"
-#include <iostream>
+#include <vector>
 using namespace std;
 
 int main() {
   UI ui;
-  Inventory inventory; // Use Inventory class
-  vector<Product> cart;
+  Inventory inventory;
   bool running = true;
   ui.LoginMenu();
 
   while (running) {
+    vector<Product> cart = user.cart;
     int choice = ui.MainMenu();
 
     switch (choice) {
