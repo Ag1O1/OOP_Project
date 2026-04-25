@@ -4,6 +4,16 @@
 using namespace std;
 void Inventory::addProduct(Product prod) { stock.push_back(prod); }
 
+std::vector<Product>::iterator Inventory::begin() { return stock.begin(); }
+std::vector<Product>::iterator Inventory::end() { return stock.end(); }
+
+std::vector<Product>::const_iterator Inventory::begin() const {
+  return stock.begin();
+}
+std::vector<Product>::const_iterator Inventory::end() const {
+  return stock.end();
+}
+
 void Inventory::removeProduct(int id) {
   for (int i = 0; i < stock.size(); i++) {
     if (stock[i].getId() == id) {
