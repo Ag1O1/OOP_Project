@@ -5,7 +5,7 @@
 #include <vector>
 class SearchProduct {
 public:
-  void execute(const std::vector<Product> &inventory) {
+  static void execute(const std::vector<Product> &inventory) {
     std::string searchQuery;
     std::cout << "\n--- Search Products ---" << std::endl;
     std::cout << "Enter product name or ID to search: ";
