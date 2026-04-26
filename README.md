@@ -23,3 +23,7 @@
 - [ ] Make GUI
   - using QT
 - [ ] Properly implement/fix saving and loading
+
+### IDEAS
+
+- [ ] Add QR code scanning for cashier to scan products
