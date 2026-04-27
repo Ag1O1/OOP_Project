@@ -61,7 +61,7 @@ Product *Inventory::getProduct(unsigned id) {
   return nullptr;
 }
 
-const vector<Product> &Inventory::getAllStock() const { return stock; }
+vector<Product> &Inventory::getAllStock() { return stock; }
 
 // True means low stock
 // The function checks the stock of a product in the stock by id

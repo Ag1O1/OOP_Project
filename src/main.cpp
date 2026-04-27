@@ -1,5 +1,7 @@
 #include "UI.h"
 #include "addToCart.h"
+#include "loadFromFile.h"
+#include "saveToFile.h"
 #include "searchProduct.h"
 #include "structs.h"
 #include <vector>
@@ -10,6 +12,7 @@ int main() {
   Inventory inventory;
   bool running = true;
   bool logged_in = false;
+  loadFromFile::execute(inventory.getAllStock());
 
   while (running) {
     UserLogin user = ui.LoginMenu();
@@ -48,6 +51,7 @@ int main() {
 
         case 5:
           // Exit
+          saveToFile::execute(inventory.getAllStock());
           running = false;
           logged_in = false;
           ui.PrintMessage("Goodbye!");
@@ -72,6 +76,7 @@ int main() {
           ui.PrintMessage("Product added successfully!");
           break;
         }
+
         case 3: {
           unsigned removeId;
           ui.DisplayInventory(inventory);
@@ -88,10 +93,14 @@ int main() {
           }
           break;
         }
+
         case 4:
           logged_in = false;
           break;
+
         case 5:
+
+          saveToFile::execute(inventory.getAllStock());
           running = false;
           logged_in = false;
           ui.PrintMessage("Goodbye!");

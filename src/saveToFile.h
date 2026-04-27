@@ -6,9 +6,10 @@
 class saveToFile {
 public:
   static void execute(std::vector<Product> &inventory) {
+    std::cout << "Saving...\n";
     std::ofstream file("products.txt");
 
-    for (int i = 0; i < inventory.size(); i++) {
+    for (long unsigned int i = 0; i < inventory.size(); i++) {
       file << inventory[i].getName() << std::endl;
       file << inventory[i].getPrice() << std::endl;
       file << inventory[i].getId() << std::endl;

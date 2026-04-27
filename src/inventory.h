@@ -22,7 +22,7 @@ public:
 
   Product *getProduct(unsigned id);
 
-  const std::vector<Product> &getAllStock() const;
+  std::vector<Product> &getAllStock();
 
   bool checkLowStock(int id, int threshold);
 };
