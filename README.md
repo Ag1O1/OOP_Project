@@ -8,8 +8,22 @@
   - System for storing and saving inventory data base
   - Receipt generation
 
-> [!Note] Please avoid using any AI generated content. If you do, make sure to
-> understand all the code properly. I will post guidelines soon
+> [!Note] Guidelines.
+
+- Try not to use AI for writing code, if you do make sure you understand it well
+  and the code follows the rest of the guidelines.
+- When you write code you must make sure it works and make sure it integrates
+  with the rest of the code.
+- Types should also be standard and follow the types of similar variables in the
+  code (for example if price uses double then any price should use the double
+  type).
+- DO NOT write code which is already written somewhere else, if code needs to be
+  reimplemented you should replace the old code and make sure the code runs
+  well.
+  - For example, if part of the code needs invintory then use the invintory
+    class that's already there.
+- It is preferred to use Git to commit and push the code, if you can't deal with
+  git then when you finish the code and it works send me the code
 
 ## Running
 
