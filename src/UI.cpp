@@ -11,7 +11,7 @@ int UI::MainMenu() {
   cout << "\n=== Supermarket Main Menu ===" << endl;
   cout << "1. View Inventory" << endl;
   cout << "2. View Cart" << endl;
-  cout << "3. Add New Product" << endl;
+  cout << "3. Add Product to Cart" << endl;
   cout << "4. Checkout & Print Receipt" << endl;
   cout << "5. Exit" << endl;
   cout << "Enter your choice: ";
