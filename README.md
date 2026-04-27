@@ -8,7 +8,7 @@
   - System for storing and saving inventory data base
   - Receipt generation
 
-> [!Note] Guidelines.
+### Guidelines
 
 - Try not to use AI for writing code, if you do make sure you understand it well
   and the code follows the rest of the guidelines.
