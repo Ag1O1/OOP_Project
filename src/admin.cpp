@@ -6,50 +6,7 @@
 #include <string>
 using namespace std;
 
-void Admin::addProduct() {
-  int id;
-  string name;
-  double price;
-  int quantity;
-
-  cin.ignore();
-  cout << "Enter id: ";
-  cin >> id;
-
-  cout << "Enter product name: ";
-  getline(cin, name);
-
-  cout << "Enter price: ";
-  cin >> price;
-
-  cout << "Enter quantity: ";
-  cin >> quantity;
-
-  inventory.push_back(Product(id, name, price, quantity));
-  saveToFile::execute(inventory);
-
-  cout << "Product added\n";
+Admin::Admin(std::string name, std::string pass) : User(name, pass) {
+  role = "admin";
 }
-
-void Admin::deleteProduct() {
-  if (inventory.empty()) {
-    cout << "No products\n";
-    return;
-  }
-}
-
-void Admin::showProducts() {
-  int index;
-  cout << "Enter number: ";
-  cin >> index;
-
-  if (index > 0 && index <= inventory.size()) {
-    inventory.erase(inventory.begin() + index - 1);
-    saveToFile::execute(inventory);
-    cout << "Deleted\n";
-  } else {
-    cout << "Invalid\n";
-  }
-}
-
-vector<Product> Admin::getProducts() { return inventory; }
+Admin::Admin(UserLogin user_data) : User(user_data) { role = "admin"; }

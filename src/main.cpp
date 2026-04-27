@@ -15,12 +15,12 @@ int main() {
   loadFromFile::execute(inventory.getAllStock());
 
   while (running) {
-    UserLogin user = ui.LoginMenu();
+    User user = ui.LoginMenu();
     logged_in = true;
     vector<Product> cart;
 
     while (logged_in) {
-      if (user.userType == "customer") {
+      if (user.getRole() == "customer") {
         int choice = ui.MainMenu();
 
         switch (choice) {
@@ -57,7 +57,7 @@ int main() {
           ui.PrintMessage("Goodbye!");
           break;
         }
-      } else if (user.userType == "admin") {
+      } else if (user.getRole() == "admin") {
         int res;
         cout << "1. DisplayInventory 2. Add product 3. Remove product 4. "
                 "logout 5. exit \n";

@@ -6,7 +6,6 @@
 struct UserLogin {
   std::string username;
   std::string password;
-  std::string userType;
 };
 
 struct NewProductDetails {

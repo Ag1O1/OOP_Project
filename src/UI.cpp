@@ -1,6 +1,8 @@
 #include "UI.h"
 #include "Product.h"
+#include "admin.h"
 #include "structs.h"
+#include "user.h"
 #include <iomanip>
 #include <iostream>
 #include <vector>
@@ -19,7 +21,7 @@ int UI::MainMenu() {
   return choice;
 }
 
-UserLogin UI::LoginMenu() {
+User UI::LoginMenu() {
   UserLogin user;
   cout << "\n=== System Login ===" << endl;
   cout << "Username: ";
@@ -27,8 +29,12 @@ UserLogin UI::LoginMenu() {
   cout << "Password: ";
   cin >> user.password;
   cout << "Account Type (admin/customer): ";
-  cin >> user.userType;
-  return user;
+  string role;
+  cin >> role;
+  if (role == "admin")
+    return Admin(user);
+  else
+    return User(user);
 }
 
 void UI::PrintMessage(const string &msg) {

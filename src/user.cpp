@@ -1,18 +1,18 @@
 #include "user.h"
-#include <iostream>
+#include "structs.h"
 using std::string;
 
 User::User(std::string name, std::string pass) {
-  username = name;
-  password = pass;
-  loggedIn = false;
+  UserLogin data;
+  data.username = name;
+  data.password = pass;
+  role = "customer";
 }
-void User::login(std::string name, std::string pass) {
-  bool condition = (name == username && pass == password);
-  loggedIn = condition;
-  std::cout << (condition ? "Successfully logged in as " + username
-                          : "Failed to log in ");
+User::User(UserLogin user_data) {
+  data = user_data;
+  role = "customer";
 }
-void User::logout() { loggedIn = false; }
+
+bool User::checkPassword(std::string pass) { return (pass == data.password); }
 string User::getRole() const { return role; }
-string User::getUsername() const { return username; }
+string User::getUsername() const { return data.username; }
