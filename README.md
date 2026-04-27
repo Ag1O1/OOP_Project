@@ -53,13 +53,13 @@
 - [ ] Add proper error handling in all functions which need it
   - As to make errors verbose instead of silently fail
 
-- [ ] Properly use user classes instead of struct
-- [ ] Cleanup
+- [x] Properly use user classes instead of struct
+- [x] Cleanup
   - Remove repeated code, replace with it's proper functions
   - Remove unessisary/unused code
-- [ ] Create cashier UI
+- [-] Create cashier UI
   - Or concider removing the cashier class altogether if its redundant
-- [ ] Polish UI
+- [-] Polish UI
   - Low priority since we'll make a GUI anyway
 - [ ] Ensure that types are consistent
 - [ ] Make GUI
