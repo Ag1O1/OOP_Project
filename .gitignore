@@ -1,4 +1,11 @@
-/obj
+obj/
+moc/
+rcc/
+.cache/
+.direnv/
+.qmake.stash
 program
+Makefile
 Project.zip
 products.txt
+compile_commands.json
