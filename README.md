@@ -27,7 +27,8 @@
 
 ## Build Requirements
 
-> [!Note] Since I don't use Windows, I am not 100% sure this is the correct way
+> [!Note]
+> Since I don't use Windows, I am not 100% sure this is the correct way
 > to build this on windows. There are probably better ways. I use Linux
 
 ### Windows
