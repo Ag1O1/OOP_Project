@@ -8,4 +8,5 @@ program
 Makefile
 Project.zip
 products.txt
+.envrc
 compile_commands.json
