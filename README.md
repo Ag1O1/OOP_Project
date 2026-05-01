@@ -25,9 +25,38 @@
 - It is preferred to use Git to commit and push the code, if you can't deal with
   git then when you finish the code and it works send me the code
 
+## Build Requirements
+
+> [!Note] Since I don't use Windows, I am not 100% sure this is the correct way
+> to build this on windows. There are probably better ways. I use Linux
+
+### Windows
+
+- [Qt Creator IDE](https://www.qt.io/development/download-qt-installer-oss)
+  - Qt6 + Qt creator, from the installer in the link.
+
+### Linux
+
+- Qt 6
+- C++ Compiler
+- make
+
+- If you have nix on your system you can install all the dependencies using
+  `nix develop`
+
 ## Running
 
-- Run `make run` in the terminal
+### Windows
+
+1. Open Qt Creator
+2. File -> Open File or Project -> Select .pro file
+3. Click the green Run button
+
+### Linux
+
+1. Run `qmake` once
+2. Run `make` to build the program
+3. `./program` to run the program
 
 ## TODO
 
@@ -69,3 +98,7 @@
     the GUI and finishing the project we will add the cashier ui as one in-store
     cashier checkout.
   - [ ] Add QR code scanning for cashier to scan products
+
+## Credits
+
+- Show/Hide icons from th studio on Flaticon
