@@ -1,0 +1,6 @@
+<RCC>
+    <qresource>
+        <file>assets/show.png</file>
+        <file>assets/hide.png</file>
+    </qresource>
+</RCC>

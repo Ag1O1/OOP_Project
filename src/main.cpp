@@ -1,13 +1,28 @@
 #include "UI.h"
 #include "addToCart.h"
 #include "loadFromFile.h"
+#include "qmainwindow.h"
 #include "saveToFile.h"
 #include "searchProduct.h"
 #include "structs.h"
+#include <QApplication>
+#include <QMessageBox>
+#include <QStyleFactory>
+
+#include <QMainWindow>
+#include <QPushButton>
+#include <gui.h>
 #include <vector>
 using namespace std;
 
-int main() {
+int main(int argc, char *argv[]) {
+  QApplication app(argc, argv);
+
+  GUI gui;
+  gui.show();
+
+  return app.exec();
+
   UI ui;
   Inventory inventory;
   bool running = true;
