@@ -335,7 +335,7 @@ void GUI::createUserInventoryView() {
   QHBoxLayout *searchLayout = new QHBoxLayout();
   QLabel *searchLabel = new QLabel("Search:");
   QLineEdit *searchBox = new QLineEdit();
-  searchBox->setPlaceholderText("Search by name or ID...");
+  searchBox->setPlaceholderText("Search by name or ID");
   searchLayout->addWidget(searchLabel);
   searchLayout->addWidget(searchBox);
 
@@ -823,9 +823,9 @@ QString GUI::getThemeIcon(const QString &lightIcon, const QString &darkIcon) {
       bgColor.red() * 0.299 + bgColor.green() * 0.587 + bgColor.blue() * 0.114;
 
   if (brightness > 128) {
-    return lightIcon; // Light background, use dark icon
+    return lightIcon;
   } else {
-    return darkIcon; // Dark background, use light icon
+    return darkIcon;
   }
 }
 

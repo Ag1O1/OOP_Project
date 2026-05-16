@@ -33,8 +33,6 @@ void UserManager::loadFromFile() {
     }
   }
   file.close();
-
-  std::cout << "Loaded " << users.size() << " users" << std::endl;
 }
 
 void UserManager::saveToFile() const {
@@ -71,11 +69,9 @@ bool UserManager::registerUser(const std::string &username,
 
 User *UserManager::login(const std::string &username,
                          const std::string &password) {
-  std::cout << "Checking user: " << username << " With pass: " << password;
   for (int i = 0; i < (int)users.size(); i++) {
     if (users[i]->getUsername() == username &&
         users[i]->checkPassword(password)) {
-      std::cout << "Found user: " << users[i]->getUsername() << std::endl;
       currentUser = users[i];
       return currentUser;
     }
