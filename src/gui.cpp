@@ -34,6 +34,7 @@ GUI::GUI(QWidget *parent) : QMainWindow(parent) {
 
 void GUI::showLogin() {
   clearLayout();
+  setWindowTitle("Login");
 
   QLabel *titleLabel = new QLabel("Inventory Management System");
   titleLabel->setAlignment(Qt::AlignCenter);
@@ -230,6 +231,7 @@ void GUI::showRegisterDialog() {
 }
 void GUI::showAdminMenu() {
   clearLayout();
+  setWindowTitle("Admin menu");
 
   QHBoxLayout *top = new QHBoxLayout();
   QHBoxLayout *toolbar = new QHBoxLayout();
@@ -281,6 +283,7 @@ void GUI::showAdminMenu() {
 
 void GUI::showUserMenu() {
   clearLayout();
+  setWindowTitle("User menu");
 
   QHBoxLayout *top = new QHBoxLayout();
   QLabel *topLabel =
