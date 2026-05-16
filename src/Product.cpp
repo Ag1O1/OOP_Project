@@ -1,5 +1,6 @@
 #include "Product.h"
 #include <iostream>
+#include <string>
 using namespace std;
 
 Product::Product(int p_id, string p_name, double p_price, int p_qty) {
@@ -22,10 +23,12 @@ void Product::setQuantity(int qty) {
   }
 }
 
-void Product::updatePrice(double newPrice) {
+void Product::setPrice(double newPrice) {
   if (newPrice >= 0.0) {
     price = newPrice;
   } else {
     cout << "Error: Price cannot be negative." << endl;
   }
 }
+
+void Product::setName(string n) { name = n; }

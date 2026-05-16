@@ -14,4 +14,5 @@ public:
   bool checkPassword(std::string pass);
   std::string getRole() const;
   std::string getUsername() const;
+  std::string getPassword() const;
 };

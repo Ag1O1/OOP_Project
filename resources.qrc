@@ -1,6 +1,8 @@
 <RCC>
     <qresource>
-        <file>assets/show.png</file>
-        <file>assets/hide.png</file>
+        <file>assets/show-dark.png</file>
+        <file>assets/hide-dark.png</file>
+        <file>assets/show-light.png</file>
+        <file>assets/hide-light.png</file>
     </qresource>
 </RCC>

@@ -27,10 +27,6 @@
 
 ## Build Requirements
 
-> [!Note]
-> Since I don't use Windows, I am not 100% sure this is the correct way
-> to build this on windows. There are probably better ways. I use Linux
-
 ### Windows
 
 - [Qt Creator IDE](https://www.qt.io/development/download-qt-installer-oss)
@@ -41,7 +37,6 @@
 - Qt 6
 - C++ Compiler
 - make
-
 - If you have nix on your system you can install all the dependencies using
   `nix develop`
 
@@ -50,18 +45,19 @@
 ### Windows
 
 1. Open Qt Creator
-2. File -> Open File or Project -> Select .pro file
-3. Click the green Run button
+1. File -> Open File or Project -> Select .pro file
+1. Click the green Run button
 
 ### Linux
 
 1. Run `qmake` once
-2. Run `make` to build the program
-3. `./program` to run the program
+1. Run `make` to build the program
+1. `./program` to run the program
 
 ## TODO
 
-- [ ] Make user manager class
+- [x] Make user manager class
+
   - private variables: `Vector<User> users, User current_user` (getter for
     current_user only)
   - Should have functions for registeration, logging in.
@@ -81,15 +77,22 @@
     is correct user class if needed.
 
 - [ ] Add proper error handling in all functions which need it
+
   - As to make errors verbose instead of silently fail
 
 - [x] Properly use user classes instead of struct
+
 - [x] Cleanup
+
   - Remove repeated code, replace with it's proper functions
   - Remove unessisary/unused code
+
 - [ ] Ensure that types are consistent
-- [ ] Make GUI
+
+- [x] Make GUI
+
   - using QT
+
 - [x] Properly implement/fix saving and loading
 
 ### IDEAS
@@ -102,4 +105,4 @@
 
 ## Credits
 
-- Show/Hide icons from th studio on Flaticon
+- Show/Hide icons from "th studio" on Flaticon

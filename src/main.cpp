@@ -25,9 +25,9 @@ int main(int argc, char *argv[]) {
 
   UI ui;
   Inventory inventory;
+  loadFromFile::execute(inventory.getAllStock());
   bool running = true;
   bool logged_in = false;
-  loadFromFile::execute(inventory.getAllStock());
 
   while (running) {
     User user = ui.LoginMenu();

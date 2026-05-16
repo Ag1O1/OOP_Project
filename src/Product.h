@@ -13,10 +13,9 @@ public:
 
   int getId() const;
   std::string getName() const;
+  void setName(std::string n);
   double getPrice() const;
+  void setPrice(double newPrice);
   int getQuantity() const;
-
   void setQuantity(int qty);
-
-  void updatePrice(double newPrice);
 };

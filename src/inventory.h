@@ -16,11 +16,15 @@ public:
 
   void removeProduct(int id);
 
+  void updateProduct(int id, const std::string &name, double price,
+                     int quantity);
+
   void addStock(unsigned id, unsigned amount);
 
   void removeStock(unsigned id, unsigned amount);
 
   Product *getProduct(unsigned id);
+  Product &getProductRef(unsigned id);
 
   std::vector<Product> &getAllStock();
 

@@ -1,5 +1,7 @@
 #include "inventory.h"
 #include "Product.h"
+#include "saveToFile.h"
+#include <string>
 #include <vector>
 using namespace std;
 void Inventory::addProduct(Product prod) { stock.push_back(prod); }
@@ -18,9 +20,24 @@ void Inventory::removeProduct(int id) {
   for (int i = 0; i < stock.size(); i++) {
     if (stock[i].getId() == id) {
       stock.erase(stock.begin() + i);
+      return;
+    }
+  }
+  throw "Item with ID " + to_string(id) + " not found";
+}
+
+void Inventory::updateProduct(int id, const std::string &name, double price,
+                              int quantity) {
+  for (int i = 0; i < getAllStock().size(); i++) {
+    Product &product = getAllStock()[i];
+    if (product.getId() == id) {
+      product.setName(name);
+      product.setPrice(price);
+      product.setQuantity(quantity);
       break;
     }
   }
+  saveToFile::execute(getAllStock());
 }
 
 void Inventory::addStock(unsigned id, unsigned amount) {
@@ -59,6 +76,15 @@ Product *Inventory::getProduct(unsigned id) {
     }
   }
   return nullptr;
+}
+
+Product &Inventory::getProductRef(unsigned id) {
+  for (int i = 0; i < (int)stock.size(); i++) {
+    if (stock[i].getId() == id) {
+      return stock[i];
+    }
+  }
+  throw std::string("Product not found");
 }
 
 vector<Product> &Inventory::getAllStock() { return stock; }
