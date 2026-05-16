@@ -4,7 +4,7 @@
 
 - Made by me and two colluges for the OOP course project
 - Online store system similar to amazon
-  - Includes Customer, Admin, and Cashier user classes
+  - Includes Customer, Admin, user classes
   - System for storing and saving inventory data base
   - Receipt generation
 
